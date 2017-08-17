@@ -68,7 +68,7 @@ function love.load()
 		       velocity = 250,
 		       dir={x=0, y=0},
 		       player_control=player_system_component,
-		       input = { valid = {}, entered = {}, command_map = {} ,
+		       input = { valid = {"up","down","left","right"}, entered = {}, command_map = {} ,
 			state = {"S_IDLE"}}
 	}
 	new_player.anim = idle_anim

@@ -3,11 +3,11 @@ world = require("ecs")
 sys = {}
 
 function input_system_function(entities, dt)
-	for i, ent in ipairs(entities) do
-		ent.input.entered = {}
-		for j, button in ipairs( ent.input ) do
+	for i, e in ipairs(entities) do
+		e.input.entered = {}
+		for j, button in ipairs( e.input.valid ) do
 			if love.keyboard.isDown( button ) then
-				ent.input.entered.add(button)
+				table.insert(e.input.entered,button)
 			end
 		end
 	end
