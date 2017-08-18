@@ -1,26 +1,28 @@
+local world = require 'ecs'
+
 sys = {}
 
 function player_system_function(players, dt)
-	local dir = {}
-	dir.x = 0
-	dir.y = 0
+	local direction = {}
+	direction.x = 0
+	direction.y = 0
 	
 	for i, player in ipairs(players) do
 	for j, button in ipairs(player.input.entered) do
 		if button == 'left' then
-			dir.x = dir.x - 1
+			direction.x = direction.x - 1
 		end
 		if button == 'right' then
-			dir.x = dir.x + 1
+			direction.x = direction.x + 1
 		end
 		if button == 'up' then
-			dir.y = dir.y - 1
+			direction.y = direction.y - 1
 		end
 		if button =='down' then
-			dir.y = dir.y + 1
+			direction.y = direction.y + 1
 		end
 	end
-	player.dir = dir
+	player.direction = direction
 	end
 
 end

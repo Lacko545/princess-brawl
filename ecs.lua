@@ -30,7 +30,7 @@ end
 
 function world:render()
 	renderable_entities = filter( self.render_system.filter_func, self.entities )
-	self.render_system.func( renderable_entities )
+	self.render_system.func( renderable_entities, dt )
 end
 
 -- make_entity_filter("list", "of", "necessary", "components")

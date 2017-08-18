@@ -1,4 +1,4 @@
-world = require("ecs")
+local world = require("ecs")
 
 sys = {}
 
